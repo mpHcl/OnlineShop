@@ -30,7 +30,7 @@ public class UserController {
         user.setDateOfBirth(Date.valueOf(LocalDate.of(2000, 12, 20)));
         userRepository.save(user);
 
-        return "Zapisano";
+        return "save";
     }
 
     @GetMapping("/all")
