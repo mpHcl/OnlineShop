@@ -27,7 +27,7 @@ public class UserController {
         user.setLastName(lname);
         user.setPassword("Hasło");
         user.setSex("Male");
-        user.setDateOfBirth(Date.valueOf(LocalDate.of(2000, 12, 20)));
+        user.setDateOfBirth(Date.valueOf(LocalDate.now()));
         userRepository.save(user);
 
         return "save";

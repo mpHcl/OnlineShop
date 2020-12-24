@@ -14,7 +14,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping("/orders")
+@RequestMapping("controllers/orders")
 public class OrderController {
     @Autowired
     private OrdersRepository ordersRepository;
