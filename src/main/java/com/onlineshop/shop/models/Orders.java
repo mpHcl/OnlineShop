@@ -1,9 +1,6 @@
 package com.onlineshop.shop.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,8 +8,15 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
-    private int userId;
-    private int productId;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name="user_id")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name="product_id")
+    private Product product;
+
     private boolean realized;
     private String phoneNumber;
     private String shippingAddress;
@@ -33,21 +37,6 @@ public class Orders {
         this.ID = ID;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
 
     public boolean isRealized() {
         return realized;
@@ -127,5 +116,21 @@ public class Orders {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

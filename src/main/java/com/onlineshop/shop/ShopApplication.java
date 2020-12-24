@@ -19,4 +19,17 @@ public class ShopApplication {
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return String.format("Hello %s!", name);
 	}
+
+	@GetMapping("/test")
+	public  String test() {
+		return "<!DOCTYPE html>\n" +
+				"<html>\n" +
+				"    <head>\n" +
+				"        <title>Test</title>\n" +
+				"    </head>\n" +
+				"    <body>\n" +
+				"        <p>HEHE</p>\n" +
+				"    </body>\n" +
+				"</html>";
+	}
 }
