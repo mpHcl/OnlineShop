@@ -16,14 +16,14 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping(path="/add")
-    public @ResponseBody String addNewUser (@RequestParam String name,
+    public @ResponseBody String addNewUser (@RequestParam String fname,
                                             @RequestParam String lname,
                                             @RequestParam String email,
                                             @RequestParam String username) {
         User user = new User();
         user.setUsername(username);
         user.setEmailAddress(email);
-        user.setFirstName(name);
+        user.setFirstName(fname);
         user.setLastName(lname);
         user.setPassword("Hasło");
         user.setSex("Male");
