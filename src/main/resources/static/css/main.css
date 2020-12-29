@@ -1,0 +1,76 @@
+.topbar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(58, 58, 58);
+    overflow: hidden;
+    height: 60px;
+}
+
+.topbaritem {
+    float: left;
+}
+
+.topbaritem a.active {
+    background-color: white;
+    color: #000;
+    border: 0cm;
+    border-bottom: 2px solid rgb(58, 58, 58) ;
+}
+
+.topbar a {
+    background-color: rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+    font-size: 25pt;
+    text-decoration: none;
+    height: 40px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.topbar a:hover{
+    background-color: rgb(172, 172, 172);
+}
+
+.bottom {
+    background-color: rgba(34, 34, 34, 0.897); 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    padding: 2% 10% 2% 10%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+#search_input {
+    float: right;
+    width: auto; 
+    margin-top: 10px;
+    padding-bottom: 10px;
+    background-color:  rgb(58, 58, 58); 
+    border: 0px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.363); 
+    color: rgb(255, 255, 255); 
+    font-size: 20pt;
+    padding-right: 30px;
+    margin-right: 30px;
+}
+
+#search_submit {
+    float: right;
+    background-color:  rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.363);
+    font-size: 22pt;
+    margin-right: 30px;
+    margin-top: 5px;
+    height: 50px;
+}
+
+#search_input:hover {
+    background-color: rgb(172, 172, 172);
+}
+
+#search_submit:hover {
+    background-color: rgb(172, 172, 172);
+}
+

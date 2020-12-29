@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.sql.Date;
 
@@ -19,7 +20,9 @@ public class UserController {
     public @ResponseBody String addNewUser (@RequestParam String fname,
                                             @RequestParam String lname,
                                             @RequestParam String email,
-                                            @RequestParam String username) {
+                                            @RequestParam String username,
+                                            HttpServletRequest request) {
+
         User user = new User();
         user.setUsername(username);
         user.setEmailAddress(email);
@@ -29,6 +32,8 @@ public class UserController {
         user.setSex("Male");
         user.setDateOfBirth(Date.valueOf(LocalDate.now()));
         userRepository.save(user);
+
+        System.out.println(request.getLocalAddr());
 
         return "save";
     }

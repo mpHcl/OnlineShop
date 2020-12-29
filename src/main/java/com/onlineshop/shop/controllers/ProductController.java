@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("controllers/products")
+@RequestMapping("/products/product")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
@@ -26,11 +26,40 @@ public class ProductController {
 
         productRepository.save(product);
 
-        return "Zapisano";
+        return "Saved";
+    }
+
+    @GetMapping("/GetByName")
+    public @ResponseBody String getByName(@RequestParam String brand) {
+        var products =  productRepository.getProductsByBrandName(brand);
+        String result = "";
+        for (var productId : products) {
+            var productOptional = productRepository.findById(productId);
+            var product = productOptional.get();
+            result += "id: " + product.getID() + "\n";
+            result += "brand: " + product.getBrand() + "\n";
+            result += "description: " + product.getDescription() + "  |  ";
+        }
+
+        return result;
     }
 
     @GetMapping("/all")
-    public @ResponseBody Iterable<Product> getAllProduct() {
+    public @ResponseBody Iterable<Product> getAllProducts() {
+        System.out.println(productRepository.findAll().getClass());
         return productRepository.findAll();
+    }
+
+    @GetMapping("/GetById")
+    public @ResponseBody String getProductById(@RequestParam int id) {
+        var optionalProduct = productRepository.findById(id);
+        if (optionalProduct.isPresent()) {
+            Product product = optionalProduct.get();
+            String result = product.getBrand() + ": \n";
+            result += product.getProductName() + ", " + product.getDescription();
+            return result;
+        }
+        else
+            return "ID not present";
     }
 }
