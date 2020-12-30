@@ -1,5 +1,5 @@
 .topbar {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: rgb(58, 58, 58);
     overflow: hidden;
     height: 60px;
@@ -36,7 +36,7 @@
     bottom: 0; 
     width: 100%; 
     padding: 2% 10% 2% 10%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 255, 255);
 }
 
@@ -74,3 +74,33 @@
     background-color: rgb(172, 172, 172);
 }
 
+.item_container {
+    margin: 5% 10%;
+    width: 80%;
+    border: 1px solid gray;
+    float: left;
+}
+
+.item {
+    text-align: center;
+    padding: 2%;
+    width: 15%;   
+    float: left;
+}
+
+.link_product_name {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18pt;
+    text-decoration: none;
+}
+
+.link_brand {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16pt;
+    text-decoration: none;
+}
+
+.price {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20pt;
+}

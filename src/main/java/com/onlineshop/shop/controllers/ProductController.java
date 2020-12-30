@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/products/product")
+@RequestMapping("/products")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;

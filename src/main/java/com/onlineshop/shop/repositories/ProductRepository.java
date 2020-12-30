@@ -10,4 +10,11 @@ import org.springframework.data.repository.query.Param;
 public interface ProductRepository extends CrudRepository<Product, Integer> {
     @Query ("select id from Product where brand like :brandName")
     public Iterable<Integer> getProductsByBrandName(@Param("brandName") String brandName);
+
+    @Query ("select id " +
+            "from Product " +
+            "where brand like :value or " +
+            "description like :value or " +
+            "productName like :value")
+    public Iterable<Integer> searchProducts(@Param("value") String value);
 }
