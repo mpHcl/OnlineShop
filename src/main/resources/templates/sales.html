@@ -4,12 +4,13 @@
         <title>Sales</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/main.css"/>
+        <script src="js/scripts.js"></script>
     </head>
     <body style="margin:0;">
         <div class="topbar" id="topnav" >
             <div class="topbaritem"><a href="index">Home</a></div>
             <div class="topbaritem"><a href="" class="active">Sales</a></div>
-            <div class="topbaritem"><a href="products">Products</a></div>
+            <div class="topbaritem"><a href="/search?value=">Products</a></div>
             <div class="topbaritem" style="float: right;"><a href="settings">Settings</a></div>
             <div class="topbaritem" style="float: right;"><a href="account">Account</a></div>
             <div class="topbaritem" style="margin: auto;width: 45%; float: right;">
@@ -23,12 +24,12 @@
         </div>
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
             <p>Products on sale</p>
-        </div>        
-        <div class="bottom">
+        </div>
+        <div class="bottom" id="bottomid">
             <h3>Contact:</h3>
                 This is not a working site, it was created only in learning purpouses <br>
                 My buissness mail: m.pilch2002@gmail.com<br><br>
-
-        </div>
+            <input type="button" onclick="closeBottom()" value="Close"/>
+        </div>   
     </body>
 </html>

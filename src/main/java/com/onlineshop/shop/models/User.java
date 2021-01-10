@@ -16,10 +16,15 @@ public class User {
     private String lastName;
     private String username;
     private String emailAddress;
-    private String sex;
-    private Date dateOfBirth;
     private String password;
 
+    public User(String firstName, String lastName, String username, String emailAddress, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.emailAddress = emailAddress;
+        this.password = password;
+    }
 
     public int getID() {
         return ID;
@@ -61,21 +66,6 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 
     public String getPassword() {
         return password;

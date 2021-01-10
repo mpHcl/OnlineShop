@@ -9,12 +9,54 @@ import org.springframework.data.repository.query.Param;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
     @Query ("select id from Product where brand like :brandName")
-    public Iterable<Integer> getProductsByBrandName(@Param("brandName") String brandName);
+    Iterable<Integer> getProductsByBrandName(@Param("brandName") String brandName);
 
     @Query ("select id " +
             "from Product " +
             "where brand like :value or " +
-            "description like :value or " +
             "productName like :value")
-    public Iterable<Integer> searchProducts(@Param("value") String value);
+    Iterable<Integer> searchProducts(@Param("value") String value);
+
+
+    @Query("select id " +
+            "from Product as P " +
+            "where brand like :value or " +
+            "productName like :value " +
+            "order by P.sold desc")
+    Iterable<Integer> searchProductsPopularity(@Param("value") String value);
+
+    @Query("select id " +
+            "from Product as P " +
+            "where brand like :value or " +
+            "productName like :value " +
+            "order by P.price asc")
+    Iterable<Integer> searchPriceAsc(@Param("value") String value);
+
+    @Query("select id " +
+            "from Product as P " +
+            "where brand like :value or " +
+            "productName like :value " +
+            "order by P.price desc")
+    Iterable<Integer> searchPriceDesc(@Param("value") String value);
+
+    @Query("select id " +
+            "from Product as P " +
+            "where brand like :value or " +
+            "productName like :value " +
+            "order by P.addedDate")
+    Iterable<Integer> searchDateAsc(@Param("value") String value);
+
+    @Query("select id " +
+            "from Product as P " +
+            "where brand like :value or " +
+            "productName like :value " +
+            "order by P.addedDate desc")
+    Iterable<Integer> searchDateDesc(@Param("value") String value);
+
+    @Query("select id " +
+            "from Product " +
+            "where onSale <> 0")
+    Iterable<Integer> searchOnSale();
+
+
 }

@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.sql.Date;
 
+
+/**
+ * Managing users account via HTTP requests
+ * It will be replaced in near future with Spring Security, HTML forms
+ */
 @Controller
 @RequestMapping(path="/users")
 public class UserController {
@@ -23,14 +28,7 @@ public class UserController {
                                             @RequestParam String username,
                                             HttpServletRequest request) {
 
-        User user = new User();
-        user.setUsername(username);
-        user.setEmailAddress(email);
-        user.setFirstName(fname);
-        user.setLastName(lname);
-        user.setPassword("Hasło");
-        user.setSex("Male");
-        user.setDateOfBirth(Date.valueOf(LocalDate.now()));
+        User user = new User(fname, lname, username, email, "########");
         userRepository.save(user);
 
         System.out.println(request.getLocalAddr());

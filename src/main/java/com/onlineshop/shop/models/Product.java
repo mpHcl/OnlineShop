@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Date;
 
 @Entity
 public class Product {
@@ -13,8 +14,12 @@ public class Product {
     private String brand;
     private String productName;
     private String description;
+    private Date addedDate;
     private double price;
+    private double onSale;
     private int amount;
+    private int sold;
+    private String imgPath;
 
 
     public int getID() {
@@ -63,5 +68,38 @@ public class Product {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
+    public int getSold() {
+        return sold;
+    }
+
+    public void setSold(int sold) {
+        this.sold = sold;
+    }
+
+
+    public Date getAddedDate() {
+        return addedDate;
+    }
+
+    public void setAddedDate(Date addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public double getOnSale() {
+        return onSale;
+    }
+
+    public void setOnSale(double onSale) {
+        this.onSale = onSale;
     }
 }

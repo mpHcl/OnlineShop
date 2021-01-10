@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
 import java.time.LocalDate;
 
+/**
+ * Managing orders via HTTP requests
+ * It will be replaced in near future by HTML form
+ */
 @Controller
 @RequestMapping("controllers/orders")
 public class OrderController {

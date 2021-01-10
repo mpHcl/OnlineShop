@@ -56,6 +56,7 @@
 
 #search_submit {
     float: right;
+    font-family: 'Courier New', Courier, monospace;
     background-color:  rgb(58, 58, 58);
     color: rgb(255, 255, 255);
     border: 0;
@@ -75,7 +76,7 @@
 }
 
 .item_container {
-    margin: 5% 10%;
+    margin: 2% 10%;
     width: 80%;
     border: 1px solid gray;
     float: left;
@@ -103,4 +104,101 @@
 .price {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20pt;
+}
+
+#bottomid input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.result_legend {
+    margin: 2% 10%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.filters {
+    margin: 1% 10%;
+    font-family: 'Courier New', Courier, monospace;
+}
+.filters label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15pt;
+}
+
+.filters input {
+    border: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15pt;
+}
+
+.filters select {
+    border: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15pt;
+}
+
+.small_img_button {
+    border: 0; 
+    background-color: rgb(255, 255, 255);
+}
+
+.small_img {
+    width: 40px; 
+    height: 40px; 
+}
+
+#jpg_buttons {
+    margin: 2% 5%; 
+    height: 60px; 
+    width: 400px; 
+    text-align: center;
+}
+
+#big_image {
+    width: 400px; 
+    height: 400px; 
+    margin: 2% 5%;
+}
+
+#product_images {
+    width: 500px; 
+    height: 500px; 
+    margin: 0px;
+    float: left;
+    margin-top: 10px;
+}
+
+#product_bio {
+    font-family: 'Courier New', Courier, monospace;
+    float: left; 
+    width: 500px;
+}
+
+#product {
+    border: 1px solid darkgray;
+    float: left;
+    padding: 2%;
+}
+
+.old_price {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20pt;
+    color: darkgray;
+    text-decoration: line-through;
+    margin: 5px;
+    padding: 5px;
+}
+
+.new_price {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20pt;
+    margin: 5px;
+    padding: 5px;
+}
+
+.sales_percent {
+    color: white;
+    background-color: red;
+    font: arial;
+    font-size: 10pt;
 }
