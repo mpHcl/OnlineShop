@@ -1,6 +1,5 @@
 package com.onlineshop.shop.controllers;
 
-import com.onlineshop.shop.models.Product;
 import com.onlineshop.shop.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,9 +37,10 @@ public class Functions {
 
     @GetMapping("/search")
     public @ResponseBody String getSearchPage(@RequestParam String value,
-                                              @RequestParam(required = false) String order) {
+                                              @RequestParam(defaultValue = "1") String page,
+                                              @RequestParam(defaultValue = "pop") String order) {
 
-        return new HTMLPageCreator().createSearchPage(value, order, productRepository);
+        return new HTMLPageCreator().createSearchPage(value, order, productRepository, Integer.parseInt(page));
     }
 
     @GetMapping("/temp")

@@ -85,8 +85,9 @@
 .item {
     text-align: center;
     padding: 2%;
-    width: 15%;   
+    width: 16%;
     float: left;
+    height: 500;
 }
 
 .link_product_name {
@@ -171,6 +172,7 @@
     font-family: 'Courier New', Courier, monospace;
     float: left; 
     width: 500px;
+    text-align: center;
 }
 
 #product {
@@ -200,5 +202,11 @@
     color: white;
     background-color: red;
     font: arial;
+    text-align: center;
     font-size: 10pt;
+}
+
+.img {
+    width: 150;
+    height: 225;
 }
